@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 10 - Practice 1",
+  "description": "Use anchor base automation to get info from pdf",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6829.27250",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

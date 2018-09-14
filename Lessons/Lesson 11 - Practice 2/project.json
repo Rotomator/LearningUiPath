@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 11 - Practice 2",
+  "description": "Create a workflow that reads documents and sends emails",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6830.18533",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

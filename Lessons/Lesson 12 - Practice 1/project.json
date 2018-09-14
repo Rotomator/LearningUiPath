@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 12 - Practice 1",
+  "description": "Use Try Catch blocks to control the flow and not If activities",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6830.20963",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

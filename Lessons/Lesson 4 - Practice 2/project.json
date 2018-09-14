@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 4 - Practice 2",
+  "description": "Recording Information from Browser",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6821.23745",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 13 - Practice 1",
+  "description": "Find a more appropriate organization of the activities in the workflow",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6830.23639",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

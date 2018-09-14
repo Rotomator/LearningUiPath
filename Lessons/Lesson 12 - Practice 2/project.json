@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 12 - Practice 2",
+  "description": "Read the contents of files and consolidate them into a single file called consolidate",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6830.21812",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 5 - Practice 2",
+  "description": "Create a sequence that will read and set font, size, and style in Notepad without using the recorder",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6827.26210",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

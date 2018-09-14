@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 4 - Practice 1",
+  "description": "Using Basic Recording",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6821.22523",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

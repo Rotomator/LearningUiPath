@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 3 - Practice 1",
+  "description": "Nickname Generator Resource",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6820.28767",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 8 - Practice 1",
+  "description": "Open application by double-clicking in various resolutions",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6828.28437",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

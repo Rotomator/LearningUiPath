@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 11 - Practice 1",
+  "description": "Create a workflow that reads the Inbox and sorts the emails",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6830.17668",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

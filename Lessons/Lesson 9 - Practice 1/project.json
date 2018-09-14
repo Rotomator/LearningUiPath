@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 9 - Practice 1",
+  "description": "Make the sum of two columns in 3 ways",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6829.17721",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

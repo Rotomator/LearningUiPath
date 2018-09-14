@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 9 - Practice 2",
+  "description": "Consolidate Multiple Sheets Into One",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6829.21577",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

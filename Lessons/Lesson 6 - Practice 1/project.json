@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 6 - Practice 1",
+  "description": "Create a sequence to input data into the Automation Challenge website",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6828.16951",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 7 Practice 1",
+  "description": "Automate ExpenseIT screen",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6828.25353",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Lesson 2 - Practice 2",
+  "description": "Print mathematical answers to console",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6820.26336",
+  "packOptions": {},
+  "runtimeOptions": {}
+}
