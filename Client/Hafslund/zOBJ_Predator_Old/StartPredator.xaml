@@ -1,0 +1,549 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="StartPredator"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ss="clr-namespace:System.Security;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="state" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>StartPredator_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Orchestrator.Client</x:String>
+      <x:String>UiPath.Orchestrator.Client.Models</x:String>
+      <x:String>UiPath.Credentials.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.POP3.Activities</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.JSON.Activities</x:String>
+      <x:String>UiPath.REST.Activities</x:String>
+      <x:String>UiPath.SOAP.Activities</x:String>
+      <x:String>UiPath.XML.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Core.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
+      <AssemblyReference>UiPath.Credentials.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="predatorPass" />
+      <Variable x:TypeArguments="x:String" Name="predatorUserName" />
+      <Variable x:TypeArguments="x:Boolean" Name="logInVisible" />
+      <Variable x:TypeArguments="x:Boolean" Name="andreBrukerePopUp" />
+      <Variable x:TypeArguments="x:String" Name="runningMode" />
+      <Variable x:TypeArguments="ui:Image" Name="screenShot" />
+    </Sequence.Variables>
+    <ui:LogMessage DisplayName="Log message" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="Starting Predator" />
+    <ui:CommentOut DisplayName="Comment out" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Double Click" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5f58e2c1214d687e7bf554ebe867853b" Selector="&lt;wnd app='explorer.exe' cls='Progman' title='Program Manager' /&gt;&lt;wnd cls='SysListView32' title='FolderView' /&gt;&lt;ctrl name='Desktop' role='list' /&gt;&lt;ctrl name='PredatorNO' role='list item' /&gt;" WaitForReady="COMPLETE" />
+            </ui:Click.Target>
+          </ui:Click>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment out" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_32">
+          <ui:StartProcess Arguments="{x:Null}" DisplayName="Start process" FileName="C:\Program Files (x86)\SPN\Predator\Predator.exe" sap2010:WorkflowViewState.IdRef="StartProcess_1" WorkingDirectory="C:\Program Files (x86)\SPN\Predator" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_29">
+      <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate 'NetUIHWND'" sap2010:WorkflowViewState.IdRef="Activate_5">
+        <ui:Activate.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="40fdd9f7e081d9961bc318db8dcf7994" Selector="&lt;wnd app='outlook.exe' cls='rctrl_renwnd32' title='Innboks - robot@solvencia.no - Outlook' /&gt;&lt;wnd cls='MsoCommandBarDock' title='MsoDockTop' /&gt;&lt;wnd cls='MsoCommandBar' title='Ribbon' /&gt;&lt;wnd cls='MsoWorkPane' title='Ribbon' /&gt;&lt;wnd aaname='Ribbon' cls='NetUIHWND' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Activate.Target>
+      </ui:Activate>
+      <ui:OpenApplication ApplicationWindow="{x:Null}" WorkingDirectory="{x:Null}" Arguments="C:\Users\Public\Desktop\" ContinueOnError="True" DisplayName="Open application 'explorer.exe File'" FileName="C:\Windows\explorer.exe" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="a62ef43a5d434e801f65a8bb5ecc12cc" Selector="&lt;wnd app='explorer.exe' omit:cls='CabinetWClass' omit:title='File Explorer' /&gt;" TimeoutMS="1000">
+        <ui:OpenApplication.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_30" />
+          </ActivityAction>
+        </ui:OpenApplication.Body>
+      </ui:OpenApplication>
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'explorer.exe Public'" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="d0a19eedaa1f5b3bf8b59aa8a4950ae6" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' title='Public Desktop' /&gt;">
+        <ui:WindowScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_31">
+              <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Double Click Image" sap2010:WorkflowViewState.IdRef="ClickImage_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+                <ui:ClickImage.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:ClickImage.CursorPosition>
+                <ui:ClickImage.Image>
+                  <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFoAAAAYCAYAAAB6OOplAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAv1JREFUaEPtls9rE0EUx1fwr+lZBPfkxYt/gT9uFRfRU/sfVPHgbRV68aKYVFvShCYlGxsqITVE8KYIKlu8FEXvQo7PefNj983sS7PNlsXDfOGR3dk3b9588uZHAF61yIOuSR50TfKga1Ip0H/+zmBlcx8ubDQyu/ioCY1PP7SH1yKVrugbu+8h2GhadrN9pL96LZIHXZM86JrEgsY92dWtdhE0tpVTAlEQQJBZCHGqPy0tjHkeceZJ5xwl+t2IGTeJyNwCCJmkWNArm11ZrcZudyZwcPwLut9OLMM2/EZ97/c/6ihUdnJpHEIQxlCNURnQVf4M1TcMA7BZOzElZDpGCrHo48JmQeOtwq3e3vcT/TUXtrl+aEW5E64CwKhMjCrj6L5JLGDToqAxFdRC0aeiTxAJz1z/AWj1HEWiyk1yMlGzFEnCpD2MYytmEuVLVy13jOu2CVmxKSQ3jzxHjJ1XKMmdAaqEfwCd7xzQ0+kUJpMJjMdjGI1G8O7wEIbDIbwdDKDf72uv5UHbW4cCwk5Evkb6m/LLeSEQezJKtL8Ty4mhQFHfeXnMecb+7BZYrHQWNEKezWas7fd62uusoEl1WVVAJyHkVJw0zLgwKaefdSBxgISYCsRqVUAcXy6+dCTtTDylkhWNlYxQvxz/hmtrO3DlXlMatnX39iofhrYWw5A6DbTVh05ycezSoLMqpe3FypVixmFB43ZhKnj92RAu330hDd877XZWuWe73tGkqbgJFk9t024mZW0dWG3mT5CTNPH42BkYCwjnS9+FpD9dMUJyJVGoagw3fxY07skI9UnjCC6tPoe1pwO4+uClbNtttTLQWMHlxCSd6bQJaTNkyPZgH4aqsuS3MIKILNvskMz/IRKbjlsCtBB7NljbFlPhQixoPPgQ6p3HHbi+/ko+f05/yt+d7e0lQHuxoPF2gVAPPnyF1Yct+WzszdZrD3oJsaDxCoe3Czz4cE/G7QIrGSFvNfI7Nn/weXFiQXudvzzomuRB1yQPuhYB/ANtWuNKO54A/wAAAABJRU5ErkJggg==" />
+                </ui:ClickImage.Image>
+                <ui:ClickImage.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="NONE" />
+                </ui:ClickImage.Target>
+              </ui:ClickImage>
+            </Sequence>
+          </ActivityAction>
+        </ui:WindowScope.Body>
+      </ui:WindowScope>
+    </Sequence>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="runningMode" DisplayName="Get Asset" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[runningMode]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_22">
+      <ui:UiElementExists DisplayName="Element Exists 'Predator.exe Predator'" Exists="[logInVisible]" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
+        <ui:UiElementExists.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="de8e7acfa27a49427a21eb172ca16512" Selector="&lt;wnd app='predator.exe' cls='TfrmLoggInn' title='Predator - Log inn' /&gt;" TimeoutMS="30000" WaitForReady="COMPLETE" />
+        </ui:UiElementExists.Target>
+      </ui:UiElementExists>
+      <If Condition="[logInVisible]" sap2010:WorkflowViewState.IdRef="If_10">
+        <If.Then>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_20">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="predatorVisible" />
+            </Sequence.Variables>
+            <If Condition="[runningMode.Equals(&quot;Test&quot;)]" sap2010:WorkflowViewState.IdRef="If_11">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_23">
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="predatorCred" DisplayName="Get Credential" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[predatorPass]" Username="[predatorUserName]" />
+                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type username" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="True" SimulateType="False" Text="[predatorUserName]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="29879ff8e22f03b96d47659b3ec0425a" Selector="&lt;wnd app='predator.exe' cls='TfrmLoggInn' title='Predator - Log inn' /&gt;&lt;wnd cls='TEdit' /&gt;" WaitForReady="NONE" />
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:TypeSecureText DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type password" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeSecureText_5" SecureText="[predatorPass]" SendWindowMessages="True" SimulateType="False">
+                    <ui:TypeSecureText.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1c02b1e54941afa39ef965437de2eef5" Selector="&lt;wnd app='predator.exe' cls='TfrmLoggInn' title='Predator - Log inn' /&gt;&lt;wnd cls='TMaskEdit' /&gt;" WaitForReady="NONE" />
+                    </ui:TypeSecureText.Target>
+                  </ui:TypeSecureText>
+                  <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click image '" sap2010:WorkflowViewState.IdRef="ClickImage_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+                    <ui:ClickImage.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:ClickImage.CursorPosition>
+                    <ui:ClickImage.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
+                    </ui:ClickImage.Image>
+                    <ui:ClickImage.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                    </ui:ClickImage.Target>
+                  </ui:ClickImage>
+                  <ui:CommentOut DisplayName="Comment out" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Predator.exe Predator'" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="6c8a38930ca46b18f1b72abc47ad3b12" Selector="&lt;wnd app='predator.exe' cls='TfrmLoggInn' title='Predator - Log inn' /&gt;">
+                          <ui:WindowScope.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_24" />
+                            </ActivityAction>
+                          </ui:WindowScope.Body>
+                        </ui:WindowScope>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                  <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Send hotkey 'TMaskEdit'" EmptyField="False" sap2010:WorkflowViewState.IdRef="SendHotkey_12" Key="enter" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1c02b1e54941afa39ef965437de2eef5" Selector="&lt;wnd app='predator.exe' cls='TfrmLoggInn' title='Predator - Log inn' /&gt;&lt;wnd cls='TMaskEdit' /&gt;" WaitForReady="NONE" />
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                </Sequence>
+              </If.Then>
+            </If>
+            <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_3" />
+            <ui:UiElementExists DisplayName="Element Exists 'Predator.exe  NB!'" Exists="[andreBrukerePopUp]" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="477084c22ffb561bfce6a06e2998f902" Selector="&lt;wnd app='predator.exe' cls='#32770' title='NB!' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[andreBrukerePopUp]" sap2010:WorkflowViewState.IdRef="If_8">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <ui:CommentOut DisplayName="Comment out" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Predator.exe  NB!'" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="333b9fa95b6c53e203aa62ccab5b50b3" Selector="&lt;wnd app='predator.exe' cls='#32770' title='NB!' /&gt;">
+                          <ui:WindowScope.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_25" />
+                            </ActivityAction>
+                          </ui:WindowScope.Body>
+                        </ui:WindowScope>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="92530d9865a4dc7ba3ac07cdf9d8ddfa" Selector="&lt;wnd app='predator.exe' cls='#32770' title='NB!' /&gt;&lt;wnd ctrlid='7' title='&amp;amp;No' /&gt;" WaitForReady="INTERACTIVE" />
+                    </ui:Click.Target>
+                  </ui:Click>
+                </Sequence>
+              </If.Then>
+            </If>
+            <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_4" />
+            <ui:UiElementExists DisplayName="Element Exists 'Predator.exe  PredatorNO'" Exists="[predatorVisible]" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1b105e58f1a82d3e12ddb3b6af8b46e2" Selector="&lt;wnd app='predator.exe' cls='TfrmPredator' title='PredatorNO' /&gt;" TimeoutMS="10000" WaitForReady="COMPLETE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[predatorVisible]" sap2010:WorkflowViewState.IdRef="If_9">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <ui:LogMessage DisplayName="Log message" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="Predator successfully opened" />
+                  <Assign sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[state]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">mainView</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <ui:LogMessage DisplayName="Log message" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="Opening Predator failed" />
+                  <Assign sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[state]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">0</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_21">
+            <ui:LogMessage DisplayName="Log message" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="Opening log on failed" />
+            <Assign sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[state]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">0</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+    <sads:DebugSymbol.Symbol>d2pcXEFTUC1GaWwwMVxzb2x2ZW5jaWF0ZXN0LXJlZGlyZWt0JFxSb2JvdDEuc29sdmVuY2lhdGVzdFxEb2N1bWVudHNcVWlQYXRoXHpPQkpfUHJlZGF0b3JcU3RhcnRQcmVkYXRvci54YW1sWV4D2gIOAgEBZwVniAECAWdoBXwVAgFmfQWDARUCAWWEAQWxARACAVayAQW2ARgCAVK3AQXYAhACAQJncmeFAQIBaIUBB4kBFQIBY4oBB5MBHAIBXJQBB7ABGAIBV7QBMbQBPgIBVLIBNrIBQwIBU7gBB7wBHAIBTb0BB9cCDAIBA4cBmgGHAcIDAgFkigHcAooBsgMCAWKKAb0DigHDAwIBYYoBiQGKAY8BAgFgigFeigF4AgFfigHMAYoB5QECAV6QAQ2QAVgCAV2UAZYClAHjAgIBW5oBDa0BGAIBWLoBhQG6AdQBAgFRugHfAboB5gECAVC4AVe4AWcCAU69ARW9ASUCAQS/AQvIAhYCAQ3LAgvVAhYCAQabAQ+sAR8CAVnDAQ36ARICATT7AQ37AVQCATL8AQ2AAiICAS2BAg2lAhICASamAg2mAlQCASSnAg2rAiICAR+sAg3HAhICAQ7MAg3MApUBAgELzQIN1AIWAgEHpwE9pwFCAgFawwEbwwFDAgE1xQER+AEcAgE3+wEd+wEnAgEz/gGLAf4BxgECATH+AdEB/gHXAQIBMPwBWfwBbgIBLoECG4ECMAIBJ4MCEaMCHAIBKaYCHaYCJwIBJakCiwGpAtMBAgEjqQLeAakC5QECASKnAmCnAnMCASCsAhusAi4CAQ+uAhG4AhwCARi7AhHFAhwCARHMAnvMApIBAgEM0gI40gI5AgEKzwI5zwJAAgEIxgETxgHmAQIBR8cBE8sBIQIBQ8wBE9ABJwIBP9EBE+IBIwIBO+MBE/IBIwIBOvMBE/cBIwIBOIQCE5MCIwIBLJQCE6ICHgIBKq8CE68CoQECAR2wAhO3AhwCARm8AhO8ApwBAgEWvQITxAIcAgESxgFJxgFXAgFMxgHPAcYB4wECAUrGAbUBxgHFAQIBSMkBpgHJAY4CAgFGxwGfAscBswICAUTOAaYBzgGSAgIBQswBggLMAZICAgFA0QF10QF7AgE84AFt4AFzAgE+3QFB3QFGAgE99QGmAfUBkgICATmgAqYBoAKNAgIBK68CgAGvAp4BAgEetQI+tQJGAgEcsgI/sgJGAgEavAKAAbwCmQECARfCAj7CAj8CARW/Aj+/AkYCARM=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="LogMessage_4" sap:VirtualizedContainerService.HintSize="1102,91" />
+      <sap2010:ViewStateData Id="Click_3" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Sequence_9" sap:VirtualizedContainerService.HintSize="336,230">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_1" sap:VirtualizedContainerService.HintSize="1102,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="StartProcess_1" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Sequence_32" sap:VirtualizedContainerService.HintSize="336,211">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_4" sap:VirtualizedContainerService.HintSize="1102,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Activate_5" sap:VirtualizedContainerService.HintSize="414,106" />
+      <sap2010:ViewStateData Id="Sequence_30" sap:VirtualizedContainerService.HintSize="200,99">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OpenApplication_1" sap:VirtualizedContainerService.HintSize="414,245" />
+      <sap2010:ViewStateData Id="ClickImage_4" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Sequence_31" sap:VirtualizedContainerService.HintSize="336,230">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WindowScope_3" sap:VirtualizedContainerService.HintSize="414,376" />
+      <sap2010:ViewStateData Id="Sequence_29" sap:VirtualizedContainerService.HintSize="1102,931">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GetRobotAsset_1" sap:VirtualizedContainerService.HintSize="1102,22" />
+      <sap2010:ViewStateData Id="UiElementExists_8" sap:VirtualizedContainerService.HintSize="1080,106" />
+      <sap2010:ViewStateData Id="GetRobotCredential_5" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="TypeInto_5" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="TypeSecureText_5" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="ClickImage_3" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Sequence_24" sap:VirtualizedContainerService.HintSize="200,99">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WindowScope_1" sap:VirtualizedContainerService.HintSize="414,245" />
+      <sap2010:ViewStateData Id="Sequence_27" sap:VirtualizedContainerService.HintSize="436,369">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_2" sap:VirtualizedContainerService.HintSize="314,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SendHotkey_12" sap:VirtualizedContainerService.HintSize="314,154" />
+      <sap2010:ViewStateData Id="Sequence_23" sap:VirtualizedContainerService.HintSize="336,897">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_11" sap:VirtualizedContainerService.HintSize="697,208" />
+      <sap2010:ViewStateData Id="Delay_3" sap:VirtualizedContainerService.HintSize="697,22" />
+      <sap2010:ViewStateData Id="UiElementExists_9" sap:VirtualizedContainerService.HintSize="697,106" />
+      <sap2010:ViewStateData Id="Sequence_25" sap:VirtualizedContainerService.HintSize="200,99">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WindowScope_2" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_28" sap:VirtualizedContainerService.HintSize="222,175">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_3" sap:VirtualizedContainerService.HintSize="314,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Click_7" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Sequence_26" sap:VirtualizedContainerService.HintSize="336,321">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_8" sap:VirtualizedContainerService.HintSize="697,469" />
+      <sap2010:ViewStateData Id="Delay_4" sap:VirtualizedContainerService.HintSize="697,22" />
+      <sap2010:ViewStateData Id="UiElementExists_10" sap:VirtualizedContainerService.HintSize="697,106" />
+      <sap2010:ViewStateData Id="LogMessage_8" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Sequence_18" sap:VirtualizedContainerService.HintSize="336,315">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogMessage_9" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="Assign_8" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Sequence_19" sap:VirtualizedContainerService.HintSize="336,315">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_9" sap:VirtualizedContainerService.HintSize="697,463" />
+      <sap2010:ViewStateData Id="Sequence_20" sap:VirtualizedContainerService.HintSize="719,1760">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogMessage_10" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Sequence_21" sap:VirtualizedContainerService.HintSize="336,315">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_10" sap:VirtualizedContainerService.HintSize="1080,1908">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_22" sap:VirtualizedContainerService.HintSize="1102,2178">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="1124,3648">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="StartPredator_1" sap:VirtualizedContainerService.HintSize="1164,3728" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
